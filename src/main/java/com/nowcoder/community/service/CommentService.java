@@ -37,7 +37,7 @@ public class CommentService implements CommunityConstant {
         return commentMapper.selectCountByEntity(entityType, entityId);
     }
 
-    /*@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
+    @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     public int addComment(Comment comment) {
         if (comment == null) {
             throw new IllegalArgumentException("参数不能为空!");
@@ -55,6 +55,6 @@ public class CommentService implements CommunityConstant {
         }
 
         return rows;
-    }*/
+    }
 
 }
