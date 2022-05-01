@@ -70,6 +70,7 @@ public class Page {
      * @return
      */
     public int getTotal() {
+        // rows / limit [+1]
         if (rows % limit == 0) {
             return rows / limit;
         } else {
@@ -83,13 +84,7 @@ public class Page {
      */
     public int getFrom() {
         int from = current - 2;
-        if (from > getTotal() - 4) {
-            from = getTotal() - 4;
-        }
-        if (from < 1) {
-            from = 1;
-        }
-        return from;
+        return from < 1 ? 1 : from;
     }
 
     /**
@@ -97,13 +92,8 @@ public class Page {
      * @return
      */
     public int getTo() {
-        int total = getTotal();
         int to = current + 2;
-        if (to > total) {
-            to = total;
-        } else if (to < 5) {
-            to = 5;
-        }
-        return to;
+        int total = getTotal();
+        return to > total ? total : to;
     }
 }
