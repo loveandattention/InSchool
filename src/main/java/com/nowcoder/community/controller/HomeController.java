@@ -1,7 +1,5 @@
 package com.nowcoder.community.controller;
 
-import com.nowcoder.community.dao.DiscussPostMapper;
-import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.Page;
 import com.nowcoder.community.entity.User;
@@ -51,5 +49,10 @@ public class HomeController {
         }
         model.addAttribute("discussPosts", discussPosts);
         return "/index";
+    }
+
+    @RequestMapping(path = "/error", method = RequestMethod.GET)
+    public String getErrorPage() {
+        return "/error/500";
     }
 }
