@@ -37,6 +37,7 @@ public class MessageController {
     @RequestMapping(path = "/letter/list", method = RequestMethod.GET)
     public String getLetterList(Model model, Page page) {
         User user = hostHolder.getUser();
+
         // 分页信息
         page.setLimit(5);
         page.setPath("/letter/list");
